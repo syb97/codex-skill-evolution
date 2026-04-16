@@ -1,0 +1,40 @@
+{
+  "name": "skill-evolution-hooks",
+  "version": "0.1.0",
+  "description": "Detect skill usage and enforce proposal-first retrospectives for local Codex skills.",
+  "author": {
+    "name": "syb97",
+    "url": "https://github.com/syb97"
+  },
+  "homepage": "https://github.com/syb97/codex-skill-evolution",
+  "repository": "https://github.com/syb97/codex-skill-evolution",
+  "license": "MIT",
+  "keywords": [
+    "codex",
+    "skills",
+    "hooks",
+    "retrospective",
+    "review-queue"
+  ],
+  "hooks": "./hooks.json",
+  "interface": {
+    "displayName": "Skill Evolution Hooks",
+    "shortDescription": "Tracks skill usage and reminds Codex to create proposals before changing rules.",
+    "developerName": "syb97",
+    "category": "Coding",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/syb97/codex-skill-evolution",
+    "privacyPolicyURL": "https://github.com/syb97/codex-skill-evolution",
+    "termsOfServiceURL": "https://github.com/syb97/codex-skill-evolution",
+    "defaultPrompt": [
+      "Keep skill learnings proposal-first and approval-gated.",
+      "Detect skill usage and require a retrospective before the final answer."
+    ],
+    "composerIcon": "./assets/skill-evolution.svg",
+    "logo": "./assets/skill-evolution.svg",
+    "screenshots": []
+  }
+}

@@ -1,0 +1,7 @@
+.codex/skill-learnings/
+.codex/skill-proposals/
+.codex/skill-backups/
+.codex/skill-evolution-state/
+.codex/skill-change-log.jsonl
+__pycache__/
+*.pyc

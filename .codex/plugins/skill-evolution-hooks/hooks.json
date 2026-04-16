@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Read|Bash|Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "./scripts/posttooluse_skill_tracker.py"
+          }
+        ]
+      }
+    ]
+  }
+}
