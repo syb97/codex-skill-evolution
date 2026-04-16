@@ -7,9 +7,9 @@ import unittest
 from pathlib import Path
 
 try:
-    from tests.helpers import make_temp_runtime, run_python_script, write_skill
+    from tests.helpers import SOURCE_SKILL_EVOLUTION, SOURCE_TRACKER, make_temp_runtime, run_python_script, write_skill
 except ModuleNotFoundError:  # pragma: no cover - unittest discovery fallback
-    from helpers import make_temp_runtime, run_python_script, write_skill  # type: ignore
+    from helpers import SOURCE_SKILL_EVOLUTION, SOURCE_TRACKER, make_temp_runtime, run_python_script, write_skill  # type: ignore
 
 
 class SkillEvolutionRuntimeTests(unittest.TestCase):
@@ -25,7 +25,7 @@ class SkillEvolutionRuntimeTests(unittest.TestCase):
             script_dir = outside_root / "tool" / "scripts"
             script_dir.mkdir(parents=True, exist_ok=True)
             script_path = script_dir / "skill_evolution.py"
-            shutil.copy2(Path("/home/shenyb/.codex/scripts/skill_evolution.py"), script_path)
+            shutil.copy2(SOURCE_SKILL_EVOLUTION, script_path)
 
             skill_path = write_skill(self.runtime.codex_skills_dir, "portable-skill")
             result = run_python_script(
@@ -68,10 +68,7 @@ class SkillEvolutionRuntimeTests(unittest.TestCase):
             tracker_dir = outside_root / "tool" / "plugins" / "skill-evolution-hooks" / "scripts"
             tracker_dir.mkdir(parents=True, exist_ok=True)
             tracker_path = tracker_dir / "posttooluse_skill_tracker.py"
-            shutil.copy2(
-                Path("/home/shenyb/.codex/plugins/skill-evolution-hooks/scripts/posttooluse_skill_tracker.py"),
-                tracker_path,
-            )
+            shutil.copy2(SOURCE_TRACKER, tracker_path)
 
             skill_path = write_skill(self.runtime.codex_skills_dir, "portable-skill")
             payload = json.dumps({"tool_name": "Read", "input": {"path": str(skill_path)}}, ensure_ascii=False)
