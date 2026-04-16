@@ -188,6 +188,13 @@ python3 scripts/check_skill_evolution_smoke.py
 python3 scripts/check_skill_evolution_smoke.py --json
 ```
 
+Run the pre-publish privacy check:
+
+```bash
+python3 scripts/check_publish_privacy.py
+python3 scripts/check_publish_privacy.py --json
+```
+
 Current automated tests:
 
 ```bash
@@ -195,6 +202,7 @@ python3 -m unittest tests.test_skill_evolution_paths -v
 python3 -m unittest tests.test_skill_evolution_cli -v
 python3 -m unittest tests.test_skill_evolution_runtime -v
 python3 -m unittest tests.test_skill_evolution_smoke -v
+python3 -m unittest tests.test_publish_privacy -v
 python3 - <<'PY'
 import unittest
 import tests.test_posttooluse_skill_tracker as t
